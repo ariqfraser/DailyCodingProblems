@@ -13,13 +13,12 @@ function calcMaxProfit(array) {
     let profits = [];
     for (let i in array) {
         for (let ii in array) {
-            if (i <= ii) continue;
+            if (ii <= i) continue;
             profits.push(array[ii] - array[i]);
         }
     }
 
     profits = profits.sort((a, b) => a - b);
-
     return profits[profits.length - 1];
 }
 
