@@ -9,7 +9,6 @@
 // could buy the stock at 5 dollars and sell it at 10 dollars.
 
 function calcMaxProfit(array) {
-    const arrayLength = array.arrayLength;
     let profits = [];
     for (let i in array) {
         for (let ii in array) {
