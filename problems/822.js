@@ -42,20 +42,21 @@ function getMergedIntervalArray(input) {
         array.splice(pos, 2, newInterval);
 
         // return to start
-        return recursiveSweep(0, array);
+        return recursiveSweep(pos > 0 ? pos + 1 : 0, array);
     };
 
     return recursiveSweep(0, sortedArray);
 }
 
-// expected output [1,3], [4,28]
 const intervals = [
     [1, 3],
     [8, 5],
     [4, 10],
     [20, 28],
     [21, 8],
-    [8, 21],
+    [200, -12],
 ];
 
+console.time('complexity');
 console.log('Merged Interval Overlaps =>', getMergedIntervalArray(intervals));
+console.timeEnd('complexity');
